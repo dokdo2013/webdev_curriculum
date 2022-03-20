@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1. 변수</title>
+</head>
+<body>
+  <p><a href="./index.html">← 목록으로 이동</a></p>
+  <h1>변수에 대해서 알아보자!</h1>
+  <hr>
+
+  <div>
+    <label for="var1">입력창 1</label>
+    <input type="text" name="var1" id="var1"><br>
+    <label for="var2">입력창 2</label>
+    <input type="text" name="var2" id="var2">
+    <button type="button" onclick="form_action()">확인</button>
+  </div>
+
+  <script>
+    function form_action () {
+      // 일단 입력창을 선택해!
+      const input_element1 = document.getElementById("var1");
+      const input_element2 = document.getElementById("var2");
+
+      // 선택한 입력창에 어떤 값이 들어가있는지 저장!
+      const input_value1 = input_element1.value;
+      const input_value2 = input_element2.value;
+      // let let_input_value1 = input_element1.value;
+      // let let_input_value2 = input_element2.value;
+
+      // 상수에 값을 다시 지정하려고 하면?
+      // input_value1 = 1;
+      // input_value2 = 1;
+
+      // 변수에 값을 다시 지정하려고 하면?
+      // let_input_value1 = 1;
+      // let_input_value2 = 1;
+
+      // 입력창에 들어있는 값을 표시해보자!
+      alert(input_value1 + " / " + input_value2);
+      // alert(let_input_value1 + " / " + let_input_value2);
+
+      // 자바스크립트는 Type을 지정해주지 않는다. 그래서 숫자 연산시 주의해야한다!
+      alert(input_value1 + input_value2);
+      // alert(parseInt(input_value1) + parseInt(input_value2));
+      console.log(typeof(input_value1));
+      // console.log(typeof(parseInt(input_value1)));
+    }
+  </script>
+</body>
+</html>
