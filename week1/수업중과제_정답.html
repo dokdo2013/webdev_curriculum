@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+  </style>
   <title>수업중과제 정답</title>
 </head>
+
 <body>
   <p><a href="./index.html">← 목록으로 이동</a></p>
   <h1>1주차 수업중과제 정답</h1>
@@ -37,7 +47,7 @@
       function action1() {
         // 입력값 가져오기 (number 타입으로 가져오기)
         const input_data = parseInt(document.getElementById("input1").value);
-        
+
         // 입력값 기본 검증
         if (input_data.length === 0 || isNaN(input_data)) {
           alert('n번째 사람을 정확히 입력해주세요.');
@@ -76,7 +86,7 @@
     <script>
       function action2() {
         // 입력값 가져오기
-        const input_data = document.getElementById("input2").value;
+        const input_data = document.getElementById("input2").value.trim();
 
         // 입력값 기본 검증
         if (input_data.length === 0) {
@@ -84,12 +94,25 @@
           return false;
         }
 
-        // 해당되는 닉네임이 있는지 확인 1 (반복문 활용)
+        // 해당되는 닉네임이 있는지 확인
+        const user_data = api_data['data'];
+        let target_user_mbti = '';
 
-        // 해당되는 닉네임이 있는지 확인 2 (JS 내장함수 활용)
+        for (let i = 0; i < user_data.length; i++) {
+          if (user_data[i].tw_name === input_data) {
+            target_user_mbti = user_data[i].mbti;
+            break;
+          }
+        }
 
         // 해당되는 사람의 MBTI를 찾아서 alert 띄워주기
-
+        if (target_user_mbti === '') {
+          alert('해당되는 사람이 없습니다.');
+          return false;
+        } else {
+          alert(input_data + '의 MBTI는 ' + target_user_mbti + '입니다.');
+          return true;
+        }
       }
     </script>
   </div>
@@ -98,7 +121,8 @@
 
   <div id="mission3">
     <h4>미션 3 : 특정 MBTI를 가진 사람의 닉네임을 쭉 뽑아서 보여주기</h4>
-    <p>설명 : select 박스에서 값을 가져와서 해당되는 사람 닉네임을 쭉 나열하여 alert로 보여주기! (ex. ISTP 선택시 '잉비네,_엔루,고앩이' 출력) (해당되는 사람이 없으면 없다고 알림)</p><br>
+    <p>설명 : select 박스에서 값을 가져와서 해당되는 사람 닉네임을 쭉 나열하여 alert로 보여주기! (ex. ISTP 선택시 '잉비네,_엔루,고앩이' 출력) (해당되는 사람이 없으면 없다고 알림)
+    </p><br>
     <label for="select3">MBTI</label>
     <select name="select3" id="select3">
       <option value="">선택</option>
@@ -123,10 +147,38 @@
 
     <script>
       function action3() {
+        // 선택값 가져오기
+        const selected_value = document.getElementById('select3').value;
 
+        // 선택값 검증
+        if (selected_value === '') {
+          alert('먼저 MBTI를 골라주세요.');
+          return false;
+        }
+
+        // 해당되는 사람 가져오기
+        let selected_user_list = [];
+        const user_data = api_data['data'];
+
+        for (let i = 0; i < user_data.length; i++) {
+          if (user_data[i].mbti === selected_value) {
+            selected_user_list.push(user_data[i].tw_name);
+          }
+        }
+
+        // 해당되는 사람 출력하기
+        if (selected_user_list.length === 0) {
+          alert('해당되는 사람이 없습니다.');
+          return false;
+        } else {
+          const selected_user_string = selected_user_list.join(', ');
+          alert(selected_user_string);
+          return true;
+        }
       }
     </script>
   </div>
 
 </body>
+
 </html>
