@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+  </style>
+  <title>4. 객체</title>
+</head>
+<body>
+  <p><a href="./index.html">← 목록으로 이동</a></p>
+  <h1>객체에 대해서 알아보자!</h1>
+  <hr>
+
+  <div>
+    <div>
+      <h3>쇼핑몰 주문 데이터 다루기</h3>
+      <p>쇼핑몰 주문에 필요한 데이터들이 객체로 제공되었습니다. 필요한 데이터를 객체에서 뽑아 콘솔에 출력해보세요.</p>
+    </div>
+  </div>
+
+  <script>
+    function form_action () {
+      const data = {
+        user: {
+          name: '조현우',
+          phone: '010-1234-5678',
+          email: 'email@email.com'
+        },
+        product: {
+          name: 'T-Shirt',
+          size: 'xl',
+          color: 'navy',
+          barcode: '12341234001234',
+          quantity: 1,
+          basic_price: 20000,
+          is_discount: true
+        },
+        payment: {
+          pay_price: 16000,
+          pay_datetime: '2022-03-28 12:34:56',
+          coupon: {
+            name: '첫 구매 10% 할인쿠폰',
+            type: 'percent',
+            percent: 10.0,
+            apply_amount: 2000,
+            duplicate_avialable: true
+          },
+          discount: {
+            name: '3월 할인상품',
+            type: 'amount',
+            percent: 0.0,
+            price: 2000
+          },
+          card: {
+            card_no: '1234-5678-****-1234',
+            card_company: 'BC카드',
+            pay_price: 16000,
+            receipt_address: 'https://receipt.com/12345678'
+          }
+        },
+        delivery: {
+          name: '조현우',
+          phone: '010-1000-2000',
+          address1: '서울특별시 강남구 테헤란로26길 14',
+          address2: '8층 801호',
+          message: '부재시 경비실에 맡겨 주세요',
+          zip_code: 12345,
+          logistics: {
+            company: 'CJ대한통운',
+            tracking_code: '1000-1234-5678',
+            tracking_start_datetime: '2022-03-28 15:30:00'
+          }
+        }
+      };
+
+    }
+
+  </script>
+</body>
+</html>

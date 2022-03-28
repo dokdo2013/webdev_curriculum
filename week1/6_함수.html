@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+  </style>
+  <title>6. 함수</title>
+</head>
+<body>
+  <p><a href="./index.html">← 목록으로 이동</a></p>
+  <h1>함수에 대해서 알아보자!</h1>
+  <hr>
+
+  <div>
+    <div>
+      <h3>함수는 자판기다</h3>
+      <label for="money">보유금액</label>
+      <input type="text" name="money" id="money">
+      <button type="button" onclick="set_money()">적용</button><br>
+      <h4>잔여금액 : <span id="remain_money">0</span></h4><br>
+      <table>
+        <tr>
+          <td>카프리썬</td>
+          <td>돼지바</td>
+          <td>빼빼로</td>
+          <td>블랙박스</td>
+        </tr>
+        <tr>
+          <td>1000</td>
+          <td>1200</td>
+          <td>2500</td>
+          <td>220000</td> 
+        </tr>
+        <tr>
+          <td><button onclick="buy(1)">구매</button>/td>
+          <td><button onclick="buy(2)">구매</button>/td>
+          <td><button onclick="buy(3)">구매</button>/td>
+          <td><button onclick="buy(4)">구매</button>/td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const items = [
+      {
+        id: 1,
+        name: '카프리썬',
+        price: 1000
+      },
+      {
+        id: 2,
+        name: '돼지바',
+        price: 1200
+      },
+      {
+        id: 3,
+        name: '빼빼로',
+        price: 2500
+      },
+      {
+        id: 4,
+        name: '블랙박스',
+        price: 220000
+      }
+    ];
+
+    // 현재 보유금액을 조회하는 함수
+    function get_money() {
+
+    }
+
+    // 돈을 설정하는 함수
+    function set_money() {
+
+    }
+
+    // 물건을 구매하는 함수
+    function buy (item) {
+
+    }
+
+  </script>
+</body>
+</html>

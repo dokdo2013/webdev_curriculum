@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+  </style>
+  <title>5. 배열</title>
+</head>
+<body>
+  <p><a href="./index.html">← 목록으로 이동</a></p>
+  <h1>배열에 대해서 알아보자!</h1>
+  <hr>
+
+  <div>
+    <div>
+      <h3>쇼핑몰 회원 통계</h3>
+      <p>쇼핑몰 회원 정보를 받아와 통계 데이터를 추출해보려 합니다. 5명 회원의 통계 데이터를 계산해보세요!</p>
+    </div>
+  </div>
+
+  <script>
+    function form_action () {
+      const user_data = [
+        {
+          name: '엄준식',
+          total_pay_price : 135000,
+          gender: 'female',
+          age: 25,
+          address_city: 'Seoul',
+          orders: [
+            {
+              item_name: '후드티',
+              item_category: '의류',
+              price: 35000,
+              review: 5.0,
+              order_hour: 23
+            },
+            {
+              item_name: '스커트',
+              item_category: '의류',
+              price: 40000,
+              review: 4.5,
+              order_hour: 21
+            },
+            {
+              item_name: '야구배트',
+              item_category: '잡화',
+              price: 60000,
+              review: 4.0,
+              order_hour: 22
+            }
+          ]
+        },
+        {
+          name: '운석열',
+          total_pay_price : 12500,
+          gender: 'male',
+          age: 60,
+          address_city: 'Seoul',
+          orders: [
+            {
+              item_name: '믿거나 말거나 합격부적',
+              item_category: '잡화',
+              price: 12500,
+              review: 5.0,
+              order_hour: 2
+            },
+          ]
+        },
+        {
+          name: '유달차',
+          total_pay_price : 222000,
+          gender: 'male',
+          age: 23,
+          address_city: 'Gyeonggi',
+          orders: [
+            {
+              item_name: '캐릭터 티셔츠',
+              item_category: '의류',
+              price: 9500,
+              review: 5.0,
+              order_hour: 21
+            },
+            {
+              item_name: '블랙박스',
+              item_category: '전자제품',
+              price: 212500,
+              review: 4.0,
+              order_hour: 14
+            },
+          ]
+        },
+        {
+          name: '이지은',
+          total_pay_price : 29900,
+          gender: 'female',
+          age: 18,
+          address_city: 'Gyeonggi',
+          orders: [
+            {
+              item_name: '생 돼지바',
+              item_category: '식품',
+              price: 29900,
+              review: 5.0,
+              order_hour: 17
+            },
+          ]
+        },
+        {
+          name: '이대호',
+          total_pay_price : 400000,
+          gender: 'female',
+          age: 30,
+          address_city: 'Busan',
+          orders: [
+            {
+              item_name: '뽁뽁이 대량구매 10kg',
+              item_category: '잡화',
+              price: 300000,
+              review: 3.0,
+              order_hour: 12
+            },
+            {
+              item_name: '기모 후드집업 겨울옷',
+              item_category: '의류',
+              price: 100000,
+              review: 1.0,
+              order_hour: 8
+            },
+          ]
+        },
+      ];
+
+      // 1. 총 매출액은 얼마?
+
+      // 2. 가장 많이 팔린 카테고리는? 가장 매출이 높은 카테고리는?
+
+      // 3. 남녀 비율은 어떻게?
+
+      // 4. 연령대는 어디가 제일 많은지?
+
+      // 5. 판매 시간대는 언제가 제일 많은지?
+
+      // 6. 어느 지역에서 제일 많이 구매했는지?
+
+      // 7. 카테고리별 평균 평점은 얼마인지?
+
+    }
+
+  </script>
+</body>
+</html>
