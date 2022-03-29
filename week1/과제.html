@@ -31,7 +31,7 @@
     fetch("https://api.c6h12o6.kr/music?page=1&per_page=1000&order=m.idx&order_type=desc")
       .catch((error) => alert('API 로딩에 실패했습니다. 새로고침해주세요.'))
       .then((response) => api_result = response.json())
-      .then((data) => api_data = data.data[0]);
+      .then((data) => api_data = data.data.data);
   </script>
 
   <div id="mission1">
