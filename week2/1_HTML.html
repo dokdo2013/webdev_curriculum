@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+  </style>
+  <title>1. HTML</title>
+</head>
+<body>
+  <p><a href="./index.html">← 목록으로 이동</a></p>
+  <h1>HTML에 대해 알아보자</h1>
+  <hr>
+
+  <!-- 주석은 이렇게 작성한다. -->
+  <div id="h" class="box">
+    <h2>1. 제목 (h 태그)</h2>
+    <h3>h3 제목</h3>
+    <h4>h4 제목</h4>
+    <h5>h5 제목</h5>
+  </div>
+
+  <div id="p_br" class="box">
+    <h2>2. 문단과 줄바꿈 (p와 br 태그)</h2>
+    <p class="message">> 문단은 p 태그를 이용해서 작성한다.</p>
+    <p>오늘은 마트에 가서 장을 봐왔다.
+      이것 저것 필요한 것들을 샀는데 사실 뭘 사야할지 몰라서 영파크한테 전화를 해서 뭐가 필요한지 물어보고 샀다.
+      파는 조금씩 파는것들이 없고 단으로 팔길래 너무 많을거 같아서 못 샀다.
+      양파는 사왔는데 집에 와서 양파 정리한다고 껍질 까다가 눈물이 줄줄 났다.
+      나는 양파가 이렇게 강한지 몰랐다.
+      사실 아직도 눈이 맵다.
+      앞으로는 양파 정리할때 고글같은걸 쓰고 정리해야겠다.
+      이제 저걸로 맛있는 밥을 해서 먹기만 하면 된다.
+      그런데 쌀이 없다.
+      그래서 쌀도 시켜야 한다.
+      지금 제일 먹고싶은건 간계밥.</p>
+      <p class="message">> br 태그를 따로 쓰지 않으면 줄바꿈이 되지 않는다!</p>
+      <p>오늘은 마트에 가서 장을 봐왔다<br>
+        이것 저것 필요한 것들을 샀는데 사실 뭘 사야할지 몰라서 영파크한테 전화를 해서 뭐가 필요한지 물어보고 샀다<br>
+        파는 조금씩 파는것들이 없고 단으로 팔길래 너무 많을거 같아서 못 샀다<br>
+        양파는 사왔는데 집에 와서 양파 정리한다고 껍질 까다가 눈물이 줄줄 났다<br>
+        나는 양파가 이렇게 강한지 몰랐다<br>
+        사실 아직도 눈이 맵다<br>
+        앞으로는 양파 정리할때 고글같은걸 쓰고 정리해야겠다<br>
+        이제 저걸로 맛있는 밥을 해서 먹기만 하면 된다<br>
+        그런데 쌀이 없다<br>
+        그래서 쌀도 시켜야 한다<br>
+        지금 제일 먹고싶은건 간계밥.</p>
+  </div>
+
+  <div id="h" class="box">
+    <h2>3. 이미지 (img 태그)</h2>
+    <p class="message">> 이미지는 img 태그로 만들고, src 속성에 링크를 적어준다.</p>
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/910cc5f0-d3b0-48da-a90e-b54994093b0a-profile_banner-480.jpeg" alt="커버사진">
+
+    <p class="message">> 이미지가 없으면 alt 속성에 적어둔 글자가 나온다.</p>
+    <img src="https://123static-cdn.jtvnw.net/jtv_user_pictures/910cc5f0-d3b0-48da-a90e-b54994093b0a-profile_banner-480.jpeg" alt="커버사진">
+
+    <p class="message">> 이미지의 크기는 css로 설정하는게 일반적이다.</p>
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/910cc5f0-d3b0-48da-a90e-b54994093b0a-profile_banner-480.jpeg" alt="커버사진" style="width: 100px">
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/910cc5f0-d3b0-48da-a90e-b54994093b0a-profile_banner-480.jpeg" alt="커버사진" style="width: 200px">
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/910cc5f0-d3b0-48da-a90e-b54994093b0a-profile_banner-480.jpeg" alt="커버사진" style="width: 300px; border: 10px solid red">
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/910cc5f0-d3b0-48da-a90e-b54994093b0a-profile_banner-480.jpeg" alt="커버사진" style="width: 200px; height: 200px; border-radius: 100px">
+
+  </div>
+
+  <div id="a" class="box">
+    <h2>4. 링크 (a 태그)</h2>
+    <p class="message">> a 태그는 링크를 연결해주는 역할을 한다.</p>
+    <a href="https://tgd.kr/s/yatchacha">트게더로 이동</a>
+
+    <p class="message">> 새 창으로 열 때는 target=_blank 를 이용한다.</p>
+    <a href="https://tgd.kr/s/yatchacha" target="_blank">트게더로 이동 (새 창)</a>
+
+    <p class="message">> 이미지에 링크를 걸려면 a태그로 감싸주면 된다.</p>
+    <a href="https://twitch.tv/yatchacha" target="_blank">
+      <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/910cc5f0-d3b0-48da-a90e-b54994093b0a-profile_banner-480.jpeg" alt="커버사진" style="width: 200px">
+    </a>
+  </div>
+
+  <div id="h" class="box">
+    <h2>5. 목록 (li, ol, ul 태그)</h2>
+    <p class="message">> ul 태그는 순서가 없는 리스트를, li 태그는 항목을 나타낸다.</p>
+    <ul>
+      <li>봄</li>
+      <li>여름</li>
+      <li>가을</li>
+      <li>겨울</li>
+    </ul>
+
+    <p class="message">> ol 태그는 순서가 있는 리스트를 보여준다.</p>
+    <ol>
+      <li>봄</li>
+      <li>여름</li>
+      <li>가을</li>
+      <li>겨울</li>
+    </ㅐl>
+
+  </div>
+
+  
+  <div id="h" class="box">
+    <h2>6. form 관련 태그 (input, button, select)</h2>
+    <p class="message">> input 태그는 type 속성으로 여러 종류를 정할 수 있고, label 태그로 input 태그에 설명을 달 수 있다.</p>
+
+
+    <form>
+      <label for="input1">그냥 입력창</label>
+      <input type="text" name="input1" id="input1"><br>
+  
+      <label for="input2">Placeholder로 입력창 안에 설명 넣을 수 있음!</label>
+      <input type="text" name="input2" id="input2" placeholder="이거는 예제 텍스트"><br>
+  
+      <label for="input3">value로 기본값을 설정해둘 수 있음!</label>
+      <input type="text" name="input3" id="input3" value="미리 들어가있는 값"><br>
+  
+      <label for="input4">이거는 이메일 입력창</label>
+      <input type="email" name="input4" id="input4" required><br>
+  
+      <label for="input5">이거는 비밀번호 입력창</label>
+      <input type="password" name="input5" id="input5"><br>
+
+      <label for="input6">이거는 전화번호 입력창</label>
+      <input type="tel" name="input6" id="input6"><br>
+
+      <label for="input7">이거는 체크박스</label>
+      <input type="checkbox" name="input7" id="input7"><br>
+
+      <label for="input8">이거는 체크박스 첫번째</label>
+      <input type="checkbox" name="input8" id="input8">
+      <label for="input9">2번째</label>
+      <input type="checkbox" name="input8" id="input9">
+      <label for="input10">3번째</label>
+      <input type="checkbox" name="input8" id="input10"><br>
+
+      <label for="input11">이거는 라디오버튼</label>
+      <input type="radio" name="input11" id="input11"><br>
+
+      <label for="input12">이거는 라디오버튼 1번</label>
+      <input type="radio" name="input12" id="input12">
+      <label for="input13">2번</label>
+      <input type="radio" name="input12" id="input13">
+      <label for="input14">3번</label>
+      <input type="radio" name="input12" id="input14"><br>
+
+      <label for="input15">이거는 날짜선택</label>
+      <input type="date" name="input15" id="input15"><br>
+
+      <label for="input16">이거는 시간선택</label>
+      <input type="time" name="input16" id="input16"><br>
+
+      <label for="input17">이거는 날짜&시간 동시에</label>
+      <input type="datetime-local" name="input17" id="input17"><br>
+
+      <label for="input18">이거는 색상 선택 기능</label>
+      <input type="color" name="input18" id="input18"><br>
+
+      <label for="input19">이거는 파일 선택 기능</label>
+      <input type="file" name="input19" id="input19"><br>
+
+      <p class="message">> button 태그로 버튼을 만들 수 있고, type으로 역할을 선택해줄 수 있다. input에 required 속성을 붙여주면 필수로 채워졌는지 검증해준다.</p>
+      <button type="submit">제출</button>
+      <button type="reset">초기화</button>
+
+      <p class="message">> select 태그는 여러가지 선택지 중 하나를 선택할 수 있음. option 태그와 함께 이용한다.</p>
+      <label for="select1">select 박스</label>
+      <select name="select1" id="select1">
+        <option value="서울">서울</option>
+        <option value="부산">부산</option>
+        <option value="인천">인천</option>
+        <option value="대전">대전</option>
+        <option value="대구">대구</option>
+        <option value="울산">울산</option>
+        <option value="광주">광주</option>
+        <option value="세종">세종</option>
+        <option value="경기">경기</option>
+        <option value="충남">충남</option>
+        <option value="충북">충북</option>
+        <option value="전남">전남</option>
+        <option value="전북">전북</option>
+        <option value="경남">경남</option>
+        <option value="경북">경북</option>
+        <option value="강원">강원</option>
+        <option value="제주">제주</option>
+      </select>
+
+    </form>
+
+
+  </div>
+  
+  <div id="h" class="box">
+    <h2>7. div와 span 태그</h2>
+    <p class="message">> div 태그는 block. span 태그는 inline이다.</p>
+
+    <div style="margin: 5px; border: 1px solid black;">div 태그</div>
+    <div style="margin: 5px; border: 1px solid black;">div 태그</div>
+    <span style="margin: 5px; border: 1px solid black;">span 태그</span>
+    <span style="margin: 5px; border: 1px solid black;">span 태그</span>
+    <span style="margin: 5px; border: 1px solid black;">span 태그</span>
+
+  </div>
+
+  <div id="h" class="box">
+    <h2>8. 테이블</h2>
+    <p class="message">> table, thead, tbody, tr, th, td 태그로 테이블을 만든다.</p>
+
+    <style>table, th, td {border: 1px solid black;}</style>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="4">전화번호부</th>
+        </tr>
+        <tr>
+          <th>순서</th>
+          <th>이름</th>
+          <th>전화번호</th>
+          <th>메모</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>윤석하나</td>
+          <td>010-1122-3344</td>
+          <td>하나둘셋</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>윤석둘</td>
+          <td>010-2233-4455</td>
+          <td>둘셋넷</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>윤석셋</td>
+          <td>010-3344-5566</td>
+          <td>셋넷다섯</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="h" class="box">
+    <h2>9. class 지정해보기</h2>
+    <p class="message">> 같은 class끼리 스타일 적용.</p>
+
+    <style>
+      .bold { font-weight: bold; }
+      .red { color: red; }
+      .blue { color: blue; }
+      .green { color: green; }
+    </style>
+
+    <span class="red">오늘은 내가</span>
+    <span class="blue bold">짜파게티</span>
+    <span class="green">요리사</span>
+    <span class="green bold">사이비</span>
+    <span class="green">비밀정원</span>
+    <span class="red bold">원더걸스</span>
+
+  </div>
+
+  <div id="h" class="box">
+    <h2>10. Emmet</h2>
+    <p class="message">> Emmet 배워보기</p>
+
+  </div>
+
+  <div id="h" class="box">
+    <h2>11. Selector 사용하기</h2>
+    <p class="message">> Selector 배워보기</p>
+
+  </div>
+
+</body>
+</html>

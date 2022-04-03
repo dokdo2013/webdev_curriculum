@@ -43,7 +43,19 @@
 
     <script>
       function action1() {
+        const input_data = document.getElementById('input1').value;
 
+        if (input_data < 1 || input_data > api_data.data.length) {
+          alert('해당되는 사람이 없습니다.');
+          return false;
+        }
+        if (isNaN(input_data)) {
+          alert('입력창에는 숫자만 입력해주세요.');
+          return false;
+        }
+
+        const tw_name = api_data.data[input_data - 1].tw_name;
+        alert(tw_name);
       }
     </script>
   </div>
