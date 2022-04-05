@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+  </style>
+  <title>2. CSS</title>
+</head>
+<body>
+  <p><a href="./index.html">← 목록으로 이동</a></p>
+  <h1>CSS에 대해 알아보자</h1>
+  <hr>
+
+  <div id="css1" class="box">
+    <h2>1. margin과 padding, border</h2>
+    <style>
+      #item1 {
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        margin: 20px;
+        border: 5px solid yellow;
+        border-radius: 5px;
+      }
+    </style>
+    <div id="item1">content</div>
+  </div>
+
+  <div id="css2" class="box">
+    <h2>2. 색상 설정하기</h2>
+    <style>
+      #item2 {
+        padding: 20px;
+        color: rgba(255,255,0, 0.5);
+        /* color: yellow; */
+        background-color: rgb(255,0,0);
+      }
+    </style>
+    <div id="item2">색상 설정하기</div>
+  </div>
+
+  <div id="css3" class="box">
+    <h2>3. 텍스트 다루기</h2>
+    <style>
+      #item3 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 900;
+        font-style: italic;
+        text-decoration: underline;
+        color: green;
+      }
+    </style>
+    <p id="item3">오늘은 마트에 가서 장을 봐왔다.
+      이것 저것 필요한 것들을 샀는데 사실 뭘 사야할지 몰라서 영파크한테 전화를 해서 뭐가 필요한지 물어보고 샀다.
+      파는 조금씩 파는것들이 없고 단으로 팔길래 너무 많을거 같아서 못 샀다.
+      양파는 사왔는데 집에 와서 양파 정리한다고 껍질 까다가 눈물이 줄줄 났다.
+      나는 양파가 이렇게 강한지 몰랐다.
+      사실 아직도 눈이 맵다.
+      앞으로는 양파 정리할때 고글같은걸 쓰고 정리해야겠다.
+      이제 저걸로 맛있는 밥을 해서 먹기만 하면 된다.
+      그런데 쌀이 없다.
+      그래서 쌀도 시켜야 한다.
+      지금 제일 먹고싶은건 간계밥.</p>
+  </div>
+
+  <div id="css4" class="box">
+    <h2>4. display 속성</h2>
+    <style>
+      #item4 div {
+        border: 5px solid black;
+        padding: 10px;
+        margin: 10px;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+    <div id="item4">
+      <div style="display: block">block</div>
+      <div style="display: block">block</div>
+      <div style="display: block">block</div>
+      <div style="display: inline-block">inline-block</div>
+      <div style="display: inline-block">inline-block</div>
+      <div style="display: inline-block">inline-block</div>
+      <div style="display: inline">inline</div>
+      <div style="display: inline">inline</div>
+      <div style="display: inline">inline</div>
+      <div style="display: none">none</div>
+    </div>
+  </div>
+
+  <div id="css5" class="box">
+    <h2>5. Flex</h2>
+    <style>
+      .flex {
+        display: flex;
+      }
+    </style>
+    <div id="item5" class="flex">
+      <span>Item 1</span>
+      <span>Item 2</span>
+      <span>Item 3</span>
+      <div class="flex">
+        <span>Item 4-1</span>
+        <span>Item 4-2</span>
+        <span>Item 4-3</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="css6" class="box">
+    <h2>6. Table</h2>
+    <style>
+      #table {
+        border-collapse: collapse;
+      }
+    </style>
+    <div id="item6">
+      <table id="table">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>CSS Selector</td>
+            <td>준식</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>HTML, Javascript, CSS</td>
+            <td>준석</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Python Programming Language</td>
+            <td>준슥</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Node.js Server</td>
+            <td>준성</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
