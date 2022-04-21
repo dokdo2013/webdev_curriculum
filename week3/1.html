@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700;900&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!--/ Bootstrap 5 CSS -->
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    label {
+      margin-bottom: 3px;
+      font-size: 18px;
+    }
+  </style>
+  <title>회원가입 페이지 만들기</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="my-5" style="text-align: center">회원가입</h1>
+
+    <div class="row">
+      <form action="">
+        <div class="col-6 mx-auto">
+          <div class="my-3">
+            <label for="email">이메일</label>
+            <div class="input-group mb-3">
+              <input type="email" class="form-control form-control-lg" placeholder="이메일을 입력해주세요" id="email" name="email">
+              <button class="btn btn-lg btn-outline-primary" type="button" id="button-addon1" onclick="email_check()">중복확인</button>
+            </div>
+          </div>
+          <div class="my-3">
+            <label for="password">비밀번호</label>
+            <input class="form-control form-control-lg" id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요">
+          </div>
+          <div class="my-3">
+            <label for="re-password">비밀번호 확인</label>
+            <input class="form-control form-control-lg" id="re-password" name="re-password" type="password" placeholder="비밀번호를 다시 입력해주세요">
+          </div>
+          <div class="my-3">
+            <label for="name">이름</label>
+            <input class="form-control form-control-lg" id="name" name="name" type="text" placeholder="이름을 입력해주세요">
+          </div>
+          <div class="my-3">
+            <label for="tel">전화번호</label>
+            <div class="input-group mb-3">
+              <input type="tel" class="form-control form-control-lg" placeholder="전화번호를 입력해주세요" id="tel" name="tel">
+              <button class="btn btn-lg btn-outline-primary" type="button" id="button-addon2" onclick="confirm_tel()">인증번호 발송</button>
+            </div>
+          </div>
+          <div id="confirm-div" class="my-3 d-none">
+            <label for="confirm-number">인증번호 입력</label>
+            <div class="input-group mb-3">
+              <input class="form-control form-control-lg" id="confirm-number" name="confirm-number" type="text" placeholder="인증번호를 입력해주세요">
+              <button class="btn btn-lg btn-outline-primary" type="button" id="button-addon3" onclick="confirm_check()">인증번호 확인</button>
+            </div>
+            <p style="text-align: right"><span id="remain-minute">5</span>:<span id="remain-second">00</span></p>
+          </div>
+          <div class="d-flex">
+            <button type="button" class="btn btn-lg btn-outline-secondary" style="margin-right: 3px; width: 100%">이전</button>
+            <button type="submit" class="btn btn-lg btn-primary" style="margin-left: 3px; width: 100%" onclick="signUp(e)">회원가입</button>
+          </div>
+        </div>
+
+        <script>
+          function confirm_tel() {
+            if (document.getElementById('button-addon2').innerHTML === '인증번호 재발송') {
+              document.getElementById('button-addon3').disabled = false;
+            }
+
+            document.getElementById('button-addon2').innerHTML = '인증번호 재발송';
+            document.getElementById('confirm-div').classList.remove('d-none');
+
+            // 타이머 (5분 = 300초)
+            let seconds = 10;
+            const timer = setInterval(function() {
+              seconds--;
+              const minute = parseInt(seconds / 60);
+              const second = seconds % 60;
+              document.getElementById('remain-minute').innerHTML = minute;
+              document.getElementById('remain-second').innerHTML = second;
+
+              if (seconds === 0) {
+                alert('인증시간이 경과하였습니다.');
+                clearInterval(timer);
+                document.getElementById('button-addon3').disabled = true;
+              }
+
+            }, 1000);
+          }
+
+          function confirm_check() {
+            document.getElementById('button-addon2').disabled = true;
+            document.getElementById('button-addon3').disabled = true;
+            document.getElementById('button-addon3').innerHTML = '인증 완료';
+          }
+
+          function email_check() {
+            const email = document.getElementById('email').value;
+            const emailList = ['yatcha0716@naver.com', 'abcd1234@gmail.com'];
+            if (emailList.indexOf(email) !== -1) {
+              alert('이미 등록된 이메일입니다.');
+              return false;
+            } else if (email.length < 8) {
+              alert('이메일 길이는 최소 8자 이상이어야 합니다.');
+              return false;
+            } else {
+              document.getElementById('button-addon1').disabled = true;
+              document.getElementById('email').disabled = true;
+              document.getElementById('button-addon1').innerHTML = '확인완료';
+            }
+          }
+
+          function signUp(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const re_password = document.getElementById('re-password').value;
+            const name = document.getElementById('name').value;
+            const tel = document.getElementById('tel').value;
+            const confirm_number = document.getElementById('confirm-number').value;
+
+            // 인증했냐?
+            if (document.getElementById('confirm-div').classList.contains('d-none')) {
+              alert('전화번호 인증이 완료되지 않았습니다.');
+              return false;
+            }
+
+
+            // 모든 칸이 다 입력되어야 함
+            if (email.length === 0 || password.length === 0 || re_password.length === 0 || name.length === 0 || tel.length === 0 || confirm_number.length === 0) {
+              alert('모든 칸을 입력해주세요.');
+              return false;
+            }
+
+            // 비밀번호 일치 여부
+            if (password !== re_password) {
+              alert('비밀번호가 일치하지 않습니다.');
+              return false;
+            }
+
+            // 인증번호 발송 및 맞는지 확인
+
+
+            // 회원가입 처리
+          }
+
+        </script>
+      </form>
+    </div>
+  </div>
+  <!-- Bootstrap5 Bundle JS -->  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <!--/ Bootstrap5 Bundle JS -->
+  
+</body>
+</html>
